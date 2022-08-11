@@ -4,7 +4,7 @@ import ProductScreen from './Product'
 import CoinScreen from './Coin'
 import GoldScreen from './Gold'
 import DrawerContent from './Drawer'
-
+import SettingScreen from './Setting'
 
 export {
     HomeScreen,
@@ -13,4 +13,5 @@ export {
     GoldScreen,
     CoinScreen,
     DrawerContent,
+    SettingScreen
 }
