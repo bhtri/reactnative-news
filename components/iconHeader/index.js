@@ -12,5 +12,3 @@ export default IconHeader = () => {
         </TouchableOpacity>
     )
 }
-
-
