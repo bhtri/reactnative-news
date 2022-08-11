@@ -3,6 +3,7 @@ import CategoryScreen from './Category'
 import ProductScreen from './Product'
 import CoinScreen from './Coin'
 import GoldScreen from './Gold'
+import DrawerContent from './Drawer'
 
 
 export {
@@ -10,5 +11,6 @@ export {
     CategoryScreen,
     ProductScreen,
     GoldScreen,
-    CoinScreen
+    CoinScreen,
+    DrawerContent,
 }
