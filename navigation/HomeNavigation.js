@@ -8,7 +8,7 @@ import { IconHeader } from '../components'
 
 const HomeStack = createStackNavigator();
 
-export default HomeStackScreen = () => {
+export default HomeStackScreen = (props) => {
   return (
     <HomeStack.Navigator
       screenOptions={{
@@ -18,9 +18,21 @@ export default HomeStackScreen = () => {
         headerTintColor: COLORS.second,
       }}
     >
-      <HomeStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Trang chu', headerLeft: () => { return (<IconHeader />) }, headerTitleAlign: 'center' }} />
-      <HomeStack.Screen name="CategoryScreen" component={CategoryScreen} options={{ title: 'CategoryScreen' }} />
-      <HomeStack.Screen name="ProductScreen" component={ProductScreen} options={{ title: 'ProductScreen' }} />
+      <HomeStack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          title: 'Home',
+          headerLeft: () => { return (<IconHeader {...props} />) }, headerTitleAlign: 'center'
+        }} />
+      <HomeStack.Screen
+        name="CategoryScreen"
+        component={CategoryScreen}
+        options={{ title: 'CategoryScreen' }} />
+      <HomeStack.Screen
+        name="ProductScreen"
+        component={ProductScreen}
+        options={{ title: 'ProductScreen' }} />
     </HomeStack.Navigator>
   );
 }

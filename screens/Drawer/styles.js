@@ -1,12 +1,50 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { COLORS } from '../../contains'
+import { COLORS, FONTSIZE } from '../../contains'
 
 const height = Dimensions.get('window').height - 180
 
 export default styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: COLORS.primary
     },
+    header: {
+        height: 220,
+        width: '100%',
+        backgroundColor: COLORS.primary,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    body: {
+        backgroundColor: '#ffffff',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20
+    },
+    headerBox: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'white',
+        borderRadius: 150,
+        marginTop: 20
+    },
+    headerTitle: {
+        marginTop: 10,
+        fontWeight: 'bold',
+        fontSize: FONTSIZE.h1,
+        color: COLORS.white
+    },
+    img: {
+        width: '100%',
+        height: '100%',
+        borderRadius: 150,
+    },
+    bottomDrawerSection: {
+        height: 60,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    bottomDrawerSectionText: {
+        color: COLORS.white,
+        fontSize: FONTSIZE.h3
+    }
 })

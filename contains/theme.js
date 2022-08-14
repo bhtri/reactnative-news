@@ -1,4 +1,4 @@
-export default COLORS = {
+const COLORS = {
     background  : '#EFF7F8',
     primary     : '#3DABED',
     second      : '#FFFFFF',
@@ -14,4 +14,14 @@ export default COLORS = {
     numberDow   : '#F64830',
     settingTitle: '#8b8b8b',
     black       : '#000000',
+}
+
+const FONTSIZE = {
+    h1 : 20,
+    h2 : 16,
+    h3 : 14,
+}
+
+export {
+    COLORS , FONTSIZE
 }
