@@ -5,7 +5,6 @@ export const fetchCategory = createAsyncThunk(
     'category/fetchCategory',
     async (data, thunkAPI) => {
         const response = await CategoryService.getCategory()
-        console.log(response.data);
         return response.data
     }
 )
@@ -17,9 +16,16 @@ const categorySlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchCategory.fulfilled, (state, action) => {
-            console.log('aa');
-        })
+        builder
+            .addCase(fetchCategory.fulfilled, (state, action) => {
+                console.log('fetchCategory.fulfilled');
+            })
+            .addCase(fetchCategory.pending, (state, action) => {
+                console.log('fetchCategory.pending');
+            })
+            .addCase(fetchCategory.rejected, (state, action) => {
+                console.log('fetchCategory.rejected');
+            })
     },
 });
 
