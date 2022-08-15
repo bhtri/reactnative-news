@@ -28,11 +28,11 @@ export default HomeStackScreen = (props) => {
       <HomeStack.Screen
         name="CategoryScreen"
         component={CategoryScreen}
-        options={({route}) => ({title: route.params.name})} />
+        options={({ route }) => ({ title: route.params.name })} />
       <HomeStack.Screen
         name="ProductScreen"
         component={ProductScreen}
-        options={{ title: 'ProductScreen' }} />
+        options={({ route }) => ({ title: route.params.name })} />
     </HomeStack.Navigator>
   );
 }

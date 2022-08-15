@@ -1,12 +1,24 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
 import Icon from '../Icon'
 
 export default ProductGrid = ({ data }) => {
+    const navigation = useNavigation();
+
+    const onArticle = () => {
+        navigation.push('ProductScreen', {
+            name: data.title,
+            id: data.id,
+            thumb: data.thumb,
+            link: data.link,
+        });
+    }
+
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity onPress={onArticle} style={styles.container}>
             <View style={styles.product}>
                 <View style={styles.boxImg}>
                     <Image style={styles.img} source={{ uri: data.thumb }} />

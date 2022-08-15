@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { ScrollView, View, FlatList } from 'react-native'
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 import styles from './styles'
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +10,6 @@ import { ProductColumn } from '../../components';
 
 export default CategoryScreen = (props) => {
     const route = useRoute();
-    const navigation = useNavigation();
     const dispatch = useDispatch();
 
     const articleData = useSelector(state => state.Article.allArticle);

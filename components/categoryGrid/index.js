@@ -12,8 +12,6 @@ export default CategoryGrid = ({ title, categoryId }) => {
     const dispatch = useDispatch();
     const articleData = useSelector(state => state.Article.article);
 
-    console.log('111');
-
     useEffect(() => {
         dispatch(fetchArticleWithCategoryID({ id: categoryId, limit: 4 }));
     }, []);
