@@ -4,17 +4,17 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import Icon from '../Icon'
 
-export default ProductColumn = () => {
+export default ProductColumn = ({ data }) => {
     return (
         <TouchableOpacity style={styles.container}>
             <View style={styles.boxImg}>
-                <Image style={styles.img} source={require('../../assets/images/img.png')} />
+                <Image style={styles.img} source={{ uri: data.thumb }} />
             </View>
             <View style={styles.boxContent}>
-                <Text style={styles.title}>Culpa id esse cillum qui aute anim magna </Text>
+                <Text style={styles.title}>{data.title}</Text>
                 <View style={styles.time}>
                     <Icon />
-                    <Text style={styles.timeText}>12/12/2021</Text>
+                    <Text style={styles.timeText}>{data.publish_date}</Text>
                 </View>
             </View>
         </TouchableOpacity>

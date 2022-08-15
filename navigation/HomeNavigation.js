@@ -28,7 +28,7 @@ export default HomeStackScreen = (props) => {
       <HomeStack.Screen
         name="CategoryScreen"
         component={CategoryScreen}
-        options={{ title: 'CategoryScreen' }} />
+        options={({route}) => ({title: route.params.name})} />
       <HomeStack.Screen
         name="ProductScreen"
         component={ProductScreen}
