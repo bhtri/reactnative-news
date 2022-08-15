@@ -8,7 +8,13 @@ import { DrawerContent } from './screens';
 
 const Drawer = createDrawerNavigator();
 
+import CategoryService from './services/category';
+
 export default function App(props) {
+
+  const data = CategoryService.getCategory();
+  console.log(data);
+
   return (
     <NavigationContainer>
       <Drawer.Navigator
