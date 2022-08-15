@@ -1,11 +1,28 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, Text, FlatList } from 'react-native'
 
 import styles from './styles'
 import { GridPrice } from '../../components'
+import { fetchPriceGold } from '../../store/slices/price';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default GoldScreen = (props) => {
+    const dispatch = useDispatch();
+    const priceGold = useSelector(state => state.Price.gold);
+
+    useEffect(() => {
+        dispatch(fetchPriceGold());
+    }, []);
+
+    const showGold = ({ item }) => {
+        return (
+            <GridPrice data={item} />
+        );
+    }
+
+
+
     return (
         <>
             <View style={styles.container}>
@@ -22,11 +39,15 @@ export default GoldScreen = (props) => {
                         </View>
                     </View>
 
-                    <GridPrice />
-                    <GridPrice numberDown />
-                    <GridPrice />
-                    <GridPrice numberDown />
-
+                    {
+                        priceGold.length !== 0 && (
+                            <FlatList
+                                data={priceGold}
+                                renderItem={showGold}
+                                keyExtractor={(item) => item.type.toString()}
+                            />
+                        )
+                    }
                 </View>
 
 
