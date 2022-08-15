@@ -4,13 +4,13 @@ import CategoryService from '../../services/category';
 export const fetchCategory = createAsyncThunk(
     'category/fetchCategory',
     async (data, thunkAPI) => {
-        const response = await CategoryService.getCategory()
+        const response = await CategoryService.getCategory(data)
         return response.data
     }
 )
 
 const categorySlice = createSlice({
-    name: 'Post',
+    name: 'Category',
     initialState: {
         category: [],
     },
