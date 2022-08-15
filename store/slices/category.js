@@ -26,6 +26,7 @@ const categorySlice = createSlice({
             })
             .addCase(fetchCategory.rejected, (state, action) => {
                 console.log('fetchCategory.rejected');
+                console.log(action);
                 console.log(action.error.message);
             })
     },

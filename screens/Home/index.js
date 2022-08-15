@@ -21,8 +21,8 @@ export default HomeScreen = () => {
         return (
             item.status && categoryItem && (
                 item.type === 'grid'
-                    ? <CategoryGrid title={categoryItem.name} />
-                    : <CategoryColumn title={categoryItem.name}  />
+                    ? <CategoryGrid title={categoryItem.name} categoryId={categoryItem.id} />
+                    : <CategoryColumn title={categoryItem.name} categoryId={categoryItem.id} />
             )
         );
     }
