@@ -19,12 +19,14 @@ const categorySlice = createSlice({
         builder
             .addCase(fetchCategory.fulfilled, (state, action) => {
                 console.log('fetchCategory.fulfilled');
+                state.category = action.payload;
             })
             .addCase(fetchCategory.pending, (state, action) => {
                 console.log('fetchCategory.pending');
             })
             .addCase(fetchCategory.rejected, (state, action) => {
                 console.log('fetchCategory.rejected');
+                console.log(action.error.message);
             })
     },
 });
