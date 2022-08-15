@@ -9,8 +9,7 @@ import { fetchCategory } from '../../store/slices/category';
 export default HomeScreen = () => {
     const dispatch = useDispatch();
     const categoryData = useSelector(state => state.Category.category);
-
-    console.log(categoryData);
+    const showHome = useSelector(state => state.Setting.home);
 
     useEffect(() => {
         dispatch(fetchCategory());
