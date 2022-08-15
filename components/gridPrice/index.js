@@ -2,14 +2,14 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 import styles from './styles'
+import { FormatPriceGold, FormatChangeCoin, FormatPriceCoin } from '../../help';
 
-export default GridPrice = ({ data, coin, numberDown }) => {
-
-    const layoutNumber = numberDown ? styles.layoutTextDow : styles.layoutTextInCr
-
+export default GridPrice = ({ data, coin }) => {
     let name = coin ? data.name : data.type;
-    let buy = coin ? data.price : data.buy;
-    let sell = coin ? data.percent_change_24h : data.sell;
+    let buy = coin ? FormatPriceCoin(data.price) : FormatPriceGold(data.buy);
+    let sell = coin ? FormatChangeCoin(data.percent_change_24h) : FormatPriceGold(data.sell);
+
+    const layoutNumber = data.percent_change_24h < 0 ? styles.layoutTextDow : styles.layoutTextInCr;
 
     return (
         <View style={styles.layoutChild}>
