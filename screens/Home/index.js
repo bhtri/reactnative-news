@@ -13,7 +13,7 @@ export default HomeScreen = () => {
 
     useEffect(() => {
         dispatch(fetchCategory());
-    }, []);
+    }, [showHome]);
 
     const showCategoryHome = ({ item }) => {
         const categoryItem = categoryData?.find(category => category.id === item.id)
