@@ -6,6 +6,7 @@ import CategoryGrid from './categoryGrid';
 import ProductGrid from './productGrid';
 import GridPrice from './gridPrice';
 import CategorySetting from './categorySetting';
+import TitleCategory from './titleCategory';
 
 export {
     IconHeader,
@@ -16,4 +17,5 @@ export {
     ProductGrid,
     GridPrice,
     CategorySetting,
+    TitleCategory,
 }
