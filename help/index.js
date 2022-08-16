@@ -1,4 +1,11 @@
+import Moment from 'moment';
 import { Platform } from "react-native";
+
+export const CustomDate = (yourDate) => {
+    return (
+        Moment(yourDate).format('DD-MM-YYYY')
+    )
+}
 
 export const FormatPriceGold = (yourNumber) => {
     yourNumber = yourNumber * 1000000

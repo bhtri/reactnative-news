@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
 import Icon from '../Icon'
+import { CustomDate } from '../../help';
 
 export default ProductColumn = ({ data }) => {
     const navigation = useNavigation();
@@ -23,10 +24,10 @@ export default ProductColumn = ({ data }) => {
                 <Image style={styles.img} source={{ uri: data.thumb }} />
             </View>
             <View style={styles.boxContent}>
-                <Text style={styles.title}>{data.title}</Text>
+                <Text numberOfLines={2} style={styles.title}>{data.title}</Text>
                 <View style={styles.time}>
                     <Icon />
-                    <Text style={styles.timeText}>{data.publish_date}</Text>
+                    <Text style={styles.timeText}>{CustomDate(data.publish_date)}</Text>
                 </View>
             </View>
         </TouchableOpacity>
