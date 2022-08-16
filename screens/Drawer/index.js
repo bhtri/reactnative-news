@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 import { View, Text, Image } from 'react-native'
-import {
-    DrawerContentScrollView,
-    DrawerItem,
-} from '@react-navigation/drawer'
-import { useNavigation } from '@react-navigation/native';
+import { DrawerContentScrollView } from '@react-navigation/drawer'
 import { Drawer } from 'react-native-paper';
 
 
 import styles from './styles'
-import { IMAGES, COLORS } from '../../contains'
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { IMAGES } from '../../contains'
+import { DrawerItemComponent } from '../../components'
 
 
 export default DrawerContent = (props) => {
-    const navigation = useNavigation()
     const [active, setActive] = useState('Home')
 
     return (
@@ -26,54 +21,10 @@ export default DrawerContent = (props) => {
                 <Text style={styles.headerTitle}>ZendVN NEWS</Text>
             </View>
             <DrawerContentScrollView style={styles.body}>
-                <DrawerItem
-                    focused={active == 'Home' ? true : false}
-                    activeTintColor={COLORS.primary}
-                    icon={({ color, size }) => (
-                        <Ionicons name={'ios-home-outline'} size={size} color={color} />
-                    )}
-                    label="Trang chủ"
-                    onPress={() => {
-                        setActive('Home')
-                        navigation.navigate('Home')
-                    }}
-                />
-                <DrawerItem
-                    focused={active == "Gold" ? true : false}
-                    activeTintColor={COLORS.primary}
-                    icon={({ color, size }) => (
-                        <Ionicons name={'ios-podium-outline'} size={size} color={color} />
-                    )}
-                    label="Giá vàng"
-                    onPress={() => {
-                        setActive('Gold')
-                        navigation.navigate('Gold')
-                    }}
-                />
-                <DrawerItem
-                    focused={active == "Coin" ? true : false}
-                    activeTintColor={COLORS.primary}
-                    icon={({ color, size }) => (
-                        <Ionicons name={'ios-pulse-outline'} size={size} color={color} />
-                    )}
-                    label="Giá coin"
-                    onPress={() => {
-                        setActive('Coin')
-                        navigation.navigate('Coin')
-                    }}
-                />
-                <DrawerItem
-                    focused={active == "Setting" ? true : false}
-                    activeTintColor={COLORS.primary}
-                    icon={({ color, size }) => (
-                        <Ionicons name={'ios-settings-outline'} size={size} color={color} />
-                    )}
-                    label="Cài đặt"
-                    onPress={() => {
-                        setActive('Setting')
-                        navigation.navigate('Setting')
-                    }}
-                />
+                <DrawerItemComponent name={'Home'} setActive={(value) => setActive(value)} active={active} />
+                <DrawerItemComponent name={'Gold'} setActive={(value) => setActive(value)} active={active} />
+                <DrawerItemComponent name={'Coin'} setActive={(value) => setActive(value)} active={active} />
+                <DrawerItemComponent name={'Setting'} setActive={(value) => setActive(value)} active={active} />
             </DrawerContentScrollView>
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <Text style={styles.bottomDrawerSectionText}>@CopyRight ZendVN</Text>

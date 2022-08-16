@@ -7,6 +7,7 @@ import ProductGrid from './productGrid';
 import GridPrice from './gridPrice';
 import CategorySetting from './categorySetting';
 import TitleCategory from './titleCategory';
+import DrawerItemComponent from './drawerItem';
 
 export {
     IconHeader,
@@ -18,4 +19,5 @@ export {
     GridPrice,
     CategorySetting,
     TitleCategory,
+    DrawerItemComponent,
 }
